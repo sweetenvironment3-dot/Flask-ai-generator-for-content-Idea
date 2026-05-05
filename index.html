@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ContentForge AI — Content Generator Agent</title>
+<link rel="stylesheet" href="static/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <aside class="side bar">
+      <div class="brand">
+        <div class="logo">✦</div>
+        <div>
+          <h1>ContentForge</h1>
+          <p>AI Content Agent</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">Content Type</h3>
+      <ul class="presets" id="presets">
+        <li class="preset active" data-preset="Blog Post">📝 Blog Post</li>
+        <li class="preset" data-preset="Social Caption">📣 Social Caption</li>
+        <li class="preset" data-preset="Ad Copy">🎯 Ad Copy</li>
+        <li class="preset" data-preset="Email">✉️ Email</li>
+        <li class="preset" data-preset="Product Description">🛍️ Product Description</li>
+        <li class="preset" data-preset="Tweet Thread">🧵 Tweet Thread</li>
+      </ul>
+
+      <h3 class="section-title">History</h3>
+      <ul class="history" id="history"></ul>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h2>Generate stunning content in seconds</h2>
+          <p>Pick a type, set your tone, and let the agent write.</p>
+        </div>
+        <div class="status"><span class="dot"></span> Agent online</div>
+      </header>
+
+      <section class="card controls">
+        <div class="row">
+          <div class="field">
+            <label>Tone</label>
+            <select id="tone">
+              <option>Professional</option>
+              <option>Casual</option>
+              <option>Witty</option>
+              <option>Persuasive</option>
+              <option>Inspirational</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Length</label>
+            <select id="length">
+              <option>Short</option>
+              <option selected>Medium</option>
+              <option>Long</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Audience</label>
+            <input id="audience" type="text" placeholder="e.g. founders, gamers" />
+          </div>
+        </div>
+
+        <label class="topic-label">Topic / Brief</label>
+        <textarea id="topic" rows="4" placeholder="Describe what you want to write about..."></textarea>
+
+        <div class="actions">
+          <button id="generate" class="btn-primary">⚡ Generate</button>
+          <button id="clear" class="btn-ghost">Clear</button>
+        </div>
+      </section>
+
+      <section class="card output-card">
+        <div class="output-head">
+          <h3>Output</h3>
+          <div class="output-actions">
+            <button id="copy" class="btn-ghost sm">📋 Copy</button>
+            <button id="regen" class="btn-ghost sm">🔄 Regenerate</button>
+          </div>
+        </div>
+        <div id="output" class="output">
+          <div class="empty">Your generated content will appear here.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="static/script.js"></script>
+</body>
+</html>
